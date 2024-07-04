@@ -1,6 +1,5 @@
-package geektime.spring.data.druiddemo;
+package com.example.demo;
 
-import com.alibaba.druid.filter.config.ConfigTools;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,10 +9,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @SpringBootApplication
 @Slf4j
-public class DruidDemoApplication implements CommandLineRunner {
+public class DemoApplication implements CommandLineRunner {
     @Autowired
     private DataSource dataSource;
 
@@ -21,19 +22,15 @@ public class DruidDemoApplication implements CommandLineRunner {
     private FooService fooService;
 
 
-
-
-
     public static void main(String[] args) {
-        SpringApplication.run(DruidDemoApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
-        log.info(dataSource.toString());
+        log.warn(dataSource.toString());
 
         new Thread(() -> fooService.selectForUpdate()).start();
         new Thread(() -> fooService.selectForUpdate()).start();
     }
 }
-
