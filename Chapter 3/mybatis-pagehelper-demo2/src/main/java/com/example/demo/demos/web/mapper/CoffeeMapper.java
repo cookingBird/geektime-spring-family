@@ -1,6 +1,6 @@
 package com.example.demo.demos.web.mapper;
 
-import com.example.demo.demos.web.model.Coffee;
+import com.example.demo.demos.web.entity.Coffee;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.session.RowBounds;
 

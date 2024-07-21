@@ -17,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 @ToString(callSuper = true)
-public class Coffee extends BaseEntity implements Serializable {
+public class Coffee2 extends BaseEntity implements Serializable {
 
     private String name;
 
