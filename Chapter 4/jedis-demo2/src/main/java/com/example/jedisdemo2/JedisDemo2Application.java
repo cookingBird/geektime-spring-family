@@ -1,13 +1,11 @@
-package geektime.spring.springbucks;
+package com.example.jedisdemo2;
 
-import geektime.spring.springbucks.service.CoffeeService;
+import com.example.jedisdemo2.service.CoffeeService;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -18,38 +16,28 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import javax.annotation.Resource;
 import java.util.Map;
 
 @Slf4j
 @EnableTransactionManagement
-@SpringBootApplication
 @EnableJpaRepositories
-public class SpringBucksApplication implements ApplicationRunner {
-    @Autowired
+@SpringBootApplication
+public class JedisDemo2Application implements CommandLineRunner {
+
+    @Resource
     private CoffeeService coffeeService;
-    @Autowired
+    @Resource
     private JedisPool jedisPool;
-    @Autowired
+    @Resource
     private JedisPoolConfig jedisPoolConfig;
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBucksApplication.class, args);
-    }
-
-    @Bean
-    @ConfigurationProperties("redis")
-    public JedisPoolConfig jedisPoolConfig() {
-        return new JedisPoolConfig();
-    }
-
-    @Bean(destroyMethod = "close")
-    public JedisPool jedisPool(@Value("${redis.host}") String host,
-                               @Value("${redis.port}") Integer port) {
-        return new JedisPool(jedisPoolConfig(), host, port);
+        SpringApplication.run(JedisDemo2Application.class, args);
     }
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(String... args) throws Exception {
         log.info(jedisPoolConfig.toString());
 
         try (Jedis jedis = jedisPool.getResource()) {
@@ -67,5 +55,17 @@ public class SpringBucksApplication implements ApplicationRunner {
                     Money.ofMinor(CurrencyUnit.of("CNY"), Long.parseLong(price)));
         }
     }
-}
 
+
+    @Bean
+    @ConfigurationProperties("spring.redis")
+    public JedisPoolConfig jedisPoolConfig() {
+        return new JedisPoolConfig();
+    }
+
+    @Bean
+    public JedisPool jedisPool(@Value("${spring.redis.host}") String host,
+                               @Value("${spring.redis.port}") Integer port) {
+        return new JedisPool(jedisPoolConfig(), host, port);
+    }
+}
