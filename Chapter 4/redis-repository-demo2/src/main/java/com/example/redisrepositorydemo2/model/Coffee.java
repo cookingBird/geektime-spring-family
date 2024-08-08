@@ -12,6 +12,7 @@ import java.io.Serializable;
 @Table(name = "T_COFFEE")
 @Builder
 @Data
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
