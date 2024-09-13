@@ -1,7 +1,6 @@
 package com.example.greetingspringbootautoconfigure;
 
 import com.example.greeting.GreetingApplication;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
