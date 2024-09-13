@@ -1,4 +1,4 @@
-package com.example.greeting2autoconfigurebackport;
+package com.example.greeting2backportspringbootautoconfigure;
 
 import com.example.greeting.GreetingApplication;
 import lombok.extern.slf4j.Slf4j;

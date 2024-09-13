@@ -34,16 +34,21 @@
             <artifactId>greeting</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>greeting2-autoconfigure-backport</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.example</groupId>-->
-<!--            <artifactId>greeting-spring-boot-autoconfigure</artifactId>-->
+<!--            <artifactId>greeting2-autoconfigure-backport</artifactId>-->
 <!--            <version>0.0.1-SNAPSHOT</version>-->
 <!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.example</groupId>-->
+<!--            <artifactId>greeting2-backport-spring-boot-autoconfigure</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>greeting-spring-boot-autoconfigure</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -68,23 +73,6 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <configuration>
-                    <mainClass>com.example.autoconfiguredemo.AutoconfigureDemoApplication</mainClass>
-                    <skip>true</skip>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>repackage</id>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

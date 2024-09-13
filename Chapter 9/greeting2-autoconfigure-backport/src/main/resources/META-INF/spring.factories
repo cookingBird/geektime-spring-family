@@ -1,2 +1,2 @@
 ﻿org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.example.greeting2autoconfigurebackport.GreetingAutoconfiguration
+com.example.greeting2autoconfigurebackport.GreetingAutoConfiguration
