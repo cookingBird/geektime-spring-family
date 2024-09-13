@@ -1,2 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-geektime.spring.hello.greeting.GreetingAutoConfiguration
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#geektime.spring.hello.greeting.GreetingAutoConfiguration
