@@ -29,21 +29,24 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+<!--      greeting2 starter-->
         <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>greeting</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.example</groupId>
+            <artifactId>greeting2-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.example</groupId>-->
+<!--            <artifactId>greeting</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--        autoconfigure backport     -->
 <!--        <dependency>-->
 <!--            <groupId>com.example</groupId>-->
 <!--            <artifactId>greeting2-backport-spring-boot-autoconfigure</artifactId>-->
 <!--            <version>0.0.1-SNAPSHOT</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>greeting2-autoconfigure-backport</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+<!--        autoconfigure-->
 <!--        <dependency>-->
 <!--            <groupId>com.example</groupId>-->
 <!--            <artifactId>greeting-spring-boot-autoconfigure</artifactId>-->

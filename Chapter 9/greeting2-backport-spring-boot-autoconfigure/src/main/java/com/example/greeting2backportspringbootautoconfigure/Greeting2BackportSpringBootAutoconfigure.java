@@ -14,7 +14,7 @@ public class Greeting2BackportSpringBootAutoconfigure {
         log.info("GreetingAutoConfiguration-------------------");
     }
     @Bean
-    public Greeting2AutoconfigurePostProcessor greeting2AutoconfigurePostProcessor(){
+    public static Greeting2AutoconfigurePostProcessor greeting2AutoconfigurePostProcessor(){
         return new Greeting2AutoconfigurePostProcessor();
     }
 }
