@@ -11,9 +11,6 @@ import org.springframework.context.annotation.Configuration;
 //@SpringBootApplication(scanBasePackages = {"com.example.greeting2autoconfigurebackport"})
 @SpringBootApplication
 public class AutoconfigureDemoApplication {
-
-
-
     public static void main(String[] args) {
         SpringApplication.run(AutoconfigureDemoApplication.class, args);
     }
