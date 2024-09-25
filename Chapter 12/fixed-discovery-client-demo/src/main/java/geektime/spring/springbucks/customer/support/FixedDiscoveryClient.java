@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ConfigurationProperties("waiter")
 @Setter
+@ConfigurationProperties("waiter")
 public class FixedDiscoveryClient implements DiscoveryClient {
     public static final String SERVICE_ID = "waiter-service";
     // waiter.services

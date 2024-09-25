@@ -9,6 +9,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -23,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 @SpringBootApplication
 @Slf4j
 @EnableDiscoveryClient
+@EnableConfigurationProperties(FixedDiscoveryClient.class)
 public class CustomerServiceApplication {
 
     public static void main(String[] args) {
